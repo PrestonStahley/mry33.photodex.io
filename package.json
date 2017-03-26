@@ -4,9 +4,12 @@
   "description": "Gotta snap 'em all!",
   "private": true,
   "scripts": {
+    "lowercase": "npm run lowercase:1 && npm run lowercase:2",
+    "lowercase:1": "renamer --find \".PNG\" --replace \".rename.png\" \"snaps/*\"",
+    "lowercase:2": "renamer --find \".rename.png\" --replace \".png\" \"snaps/*\"",
     "rename": "renamer --regex --insensitive --find \".*(\\d{3}).*\\.png\" --replace \"$1.png\" \"snaps/*\"",
     "presnaps": "npm run rename && mkdirp snaps/gallery && mkdirp snaps/thumbs && npm run snaps:placeholder",
-    "snaps": "npm run snaps:gallery && npm run snaps:thumbs",
+    "snaps": "npm run lowercase && npm run snaps:gallery && npm run snaps:thumbs",
     "postsnaps": "npm run snaps:cleanup && npm run snaps:jsonlist",
     "snaps:placeholder": "magick convert -size \"192x192\" -colorspace Gray xc: +noise Random snaps/missingno.png",
     "snaps:gallery": "magick mogrify -path snaps/gallery -quality 50 -format jpg snaps/*.png",
