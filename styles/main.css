@@ -2,14 +2,9 @@
 
 body {
   background-color: #DEDEFF;
-  color: #F0F0FF;
+  color: #57446C;
   font-family: "Lato", sans-serif;
   overflow-y: scroll;
-  margin: 0;
-}
-
-body.no-scroll {
-  position: fixed;
 }
 
 body.loading .hidden-while-loading,
@@ -45,11 +40,29 @@ body:not(.loading) .hidden-when-loaded {
 }
 
 #content {
-  margin: 8px;
+  margin-top: 110px;
+}
+
+#readme {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+
+#readme p {
+  margin: 5px 0;
+}
+
+#readme a {
+  color: #57446C;
+  font-weight: bold;
+}
+
+#readme a:hover, #readme a:active {
+  color: #7C619B;
 }
 
 #entries {
-  margin-top: 120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,99 +73,35 @@ body:not(.loading) .hidden-when-loaded {
   justify-content: center;
 }
 
-#gallery {
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 2;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-#gallery:not(.active) {
-  display: none;
-}
-
-#gallery img {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-user-drag: none;
-  -moz-user-select: none;
-  user-drag: none;
-}
-
-.gallery-image {
-  max-height: 80%;
-  max-width: 80%;
-  box-shadow: 0px 0px 30px #C9C9FF;
-  display: block;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-transition: left 0.5s;
-  transition: left 0.5s;
-}
-
-.gallery-image.previous {
-  left: -200%;
-}
-
-.gallery-image.next {
-  left: 200%;
-}
-
-#close-button {
-  height: 40px;
-  width: 40px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-}
-
-#close-button:active {
-  opacity: 0.8;
-}
-
 .entry {
-  text-align: center;
   position: relative;
   overflow: hidden;
-  box-sizing: border-box;
-  border-radius: 10%;
-}
-
-.entry.gen-i {
   background-color: #C9C9FF;
+  border-radius: 20px;
+  margin: 6px;
+  width: 192px;
+  height: 192px;
+  font-weight: bold;
 }
 
-.entry.gen-ii {
-  background-color: #BED3FE;
+.entry::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-.entry.unobtainable {
-  background-color: rgba(255, 255, 255, 0.15);
+.entry:hover::after {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-.entry.gen-i.unobtainable {
-  color: #C9C9FF
+.entry:active::after {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-.entry.gen-ii.unobtainable {
-  color: #BED3FE
-}
-
-.entry img {
-  cursor: pointer;
+.entry img.profile {
   max-width: 100%;
   display: block;
   margin: auto;
@@ -163,56 +112,34 @@ body:not(.loading) .hidden-when-loaded {
   right: 0;
 }
 
-.entry.placeholder {
-  height: 0 !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+.entry .user-info {
+  padding: 2px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #57446C;
+  color: #F0F0FF;
 }
 
-.entry {
-  margin: 6px;
-  width: 192px;
-  height: 192px;
-  line-height: 192px;
-  font-size: 72px;
+.entry .team-badge {
+  background-size: 40px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 40px;
+  height: 80px;
 }
 
-@media (max-width: 1200px) {
-  .entry {
-    margin: 5px;
-    width: 160px;
-    height: 160px;
-    line-height: 160px;
-    font-size: 60px;
-  }
+.entry .team-badge.mystic {
+  background-image: url("team-badges/mystic.png");
 }
 
-@media (max-width: 960px) {
-  .entry {
-    margin: 4px;
-    width: 128px;
-    height: 128px;
-    line-height: 128px;
-    font-size: 48px;
-  }
+.entry .team-badge.instinct {
+  background-image: url("team-badges/instinct.png");
 }
 
-@media (max-width: 720px) {
-  .entry {
-    margin: 3px;
-    width: 96px;
-    height: 96px;
-    line-height: 96px;
-    font-size: 36px;
-  }
-}
-
-@media (max-width: 480px) {
-  .entry {
-    margin: 2px;
-    width: 64px;
-    height: 64px;
-    line-height: 64px;
-    font-size: 24px;
-  }
+.entry .team-badge.valor {
+  background-image: url("team-badges/valor.png");
 }
