@@ -6,48 +6,34 @@
   <title>Photódex</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Photódex: Gotta snap 'em all!'">
-  <meta name="author" content="JT Atomico">
+  <meta name="description" content="Photódex: Gotta snap 'em all!">
+  <meta name="author" content="JT Atomico, Preston Stahley">
+  <meta property="og:title" content="Photódex" />
+  <meta property="og:description" content="LET ME SHOW YOU MY POKEMANS!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://photodex.prestonstahley.com" />
+  <meta property="og:image" content="assets/mypokemans.jpg" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles/main.css">
-  <style media="screen">
-    #banner {
-      height:66px;
-    }
-    #banner h1 {
-      font-size: 20px;
-      margin:10px 0 5px;
-    }
-    #banner h2 {
-      font-size: 14px;
-      margin:0;
-    }
-    #entries {
-      margin-top: 82px;
-    }
-    @media (min-width:768px) {
-      #banner {
-        height:100px;
-      }
-      #banner h1 {
-        font-size: 32px;
-        margin-top: 15px;
-      }
-      #banner h2 {
-        font-size: 20px;
-      }
-      #entries {
-        margin-top: 120px;
-      }
-    }
-  </style>
 </head>
 
 <body class="loading">
 
-  <div id="banner"></div>
-  <div id="content"></div>
+  <div id="banner">
+    <h1>PHOTÓDEX</h1>
+    <h2 class="hidden-while-loading">SNAPPED: <span id="snapped-count">0</span></h2>
+    <h2 class="hidden-when-loaded">LOADING <div class="svg-icon svg-baseline"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 1024 1024"> <path id="pkmn-go-teamless" fill="#B6A9DE" class="pokeball" stroke="none" stroke-width="1" d="M 512.00,96.80 C 304.28,96.94 132.17,249.33 101.24,448.41 101.24,448.41 312.51,448.80 312.51,448.80 339.50,364.37 418.60,303.25 512.00,303.20 605.25,303.31 684.24,364.33 711.33,448.61 711.33,448.61 922.53,448.80 922.53,448.80 891.82,249.60 719.75,97.06 512.00,96.80 512.00,96.80 512.00,96.80 512.00,96.80 Z M 512.00,376.80 C 436.89,376.80 376.00,437.69 376.00,512.80 376.00,587.91 436.89,648.80 512.00,648.80 512.00,648.80 512.00,648.80 512.00,648.80 587.11,648.80 648.00,587.91 648.00,512.80 648.00,512.80 648.00,512.80 648.00,512.80 648.00,437.69 587.11,376.80 512.00,376.80 512.00,376.80 512.00,376.80 512.00,376.80 512.00,376.80 512.00,376.80 512.00,376.80 Z M 101.47,576.80 C 132.18,776.00 304.25,928.54 512.00,928.80 719.72,928.66 891.83,776.27 922.76,577.19 922.76,577.19 711.49,576.80 711.49,576.80 684.50,661.23 605.40,722.35 512.00,722.40 418.75,722.29 339.76,661.27 312.67,576.99 312.67,576.99 101.47,576.80 101.47,576.80 101.47,576.80 101.47,576.80 101.47,576.80 Z" /> </svg></div></h2>
+  </div>
+
+  <div id="content">
+    <div id="entries" class="hidden-while-loading"></div>
+      <div id="gallery">
+        <img class="gallery-image previous">
+        <img class="gallery-image current">
+        <img class="gallery-image next">
+        <img id="close-button" src="assets/close.png">
+      </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="scripts/jquery.mobile.custom.min.js"></script>

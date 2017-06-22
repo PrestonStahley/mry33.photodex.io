@@ -196,3 +196,83 @@ body:not(.loading) .hidden-when-loaded {
     font-size: 24px;
   }
 }
+
+/* Style tweaks (PrestonStahley) */
+
+#banner {
+  height:66px;
+}
+#banner h1 {
+  font-size: 20px;
+  margin:10px 0 5px;
+}
+#banner h2 {
+  font-size: 14px;
+  margin:0;
+}
+#entries {
+  margin-top: 82px;
+}
+
+.gallery-image {
+  box-shadow: none;
+}
+
+.svg-icon {
+  display: inline-flex;
+  align-self: center;
+  position: relative;
+  height: 1em;
+  width: 1em;
+}
+.svg-icon svg {
+  height:1em;
+  width:1em;
+}
+.svg-icon.svg-baseline svg {
+  bottom: -0.125em;
+  position: absolute;
+}
+
+.pokeball {
+-webkit-animation: rotation 1000ms infinite linear;
+-moz-animation: rotation 1000ms infinite linear;
+-o-animation: rotation 1000ms infinite linear;
+animation: rotation 1000ms infinite linear;
+transform-origin: 50% 50%;
+-webkit-transform-origin: 50% 50%;
+-moz-transform-origin: 50% 50%;
+}
+
+@-webkit-keyframes rotation {
+from {-webkit-transform: rotate(0deg);}
+to   {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotation {
+from {-moz-transform: rotate(0deg);}
+to   {-moz-transform: rotate(360deg);}
+}
+@-o-keyframes rotation {
+from {-o-transform: rotate(0deg);}
+to   {-o-transform: rotate(360deg);}
+}
+@keyframes rotation {
+from {transform: rotate(0deg);}
+to   {transform: rotate(360deg);}
+}
+
+@media (min-width:768px) {
+  #banner {
+    height:100px;
+  }
+  #banner h1 {
+    font-size: 32px;
+    margin-top: 15px;
+  }
+  #banner h2 {
+    font-size: 20px;
+  }
+  #entries {
+    margin-top: 120px;
+  }
+}

@@ -1,20 +1,4 @@
-// Initial DOM
-var banner =
-  '<h1>PHOTÓDEX</h1>' +
-  '<h2 class="hidden-while-loading">SNAPPED: <span id="snapped-count">0</span></h2>' +
-  '<h2 class="hidden-when-loaded">LOADING <span class="fa fa-spinner fa-pulse"></span></h2>';
-var content =
-  '<div id="entries" class="hidden-while-loading"></div>' +
-  '<div id="gallery">' +
-    '<img class="gallery-image previous">' +
-    '<img class="gallery-image current">' +
-    '<img class="gallery-image next">' +
-    '<img id="close-button" src="assets/close.png">' +
-  '</div>';
-
 $(function () {
-  $('#banner').append(banner);
-  $('#content').append(content);
 
   var $window = $(window);
   var $body = $(document.body);
